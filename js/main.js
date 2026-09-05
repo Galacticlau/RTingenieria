@@ -489,20 +489,20 @@ function iniciarPestanasTecnicas() {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animar-aparicion">
 
         <!-- Columna izquierda: descripción y características -->
-        <div class="lg:col-span-7 space-y-4">
+        <div class="lg:col-span-7 space-y-6">
           <div>
 
             <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight">
               ${datos.titulo}
             </h3>
 
-            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+            <p class="text-slate-300 text-base mt-3 leading-relaxed">
               ${datos.descripcion}
             </p>
           </div>
 
-          <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800">
-            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+          <div class="bg-slate-900/90 rounded-2xl p-5 border border-slate-800">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
               <svg
                 class="w-4 h-4 text-amber-400"
                 fill="none"
@@ -520,7 +520,7 @@ function iniciarPestanasTecnicas() {
               Alcance técnico y entregables
             </h4>
 
-            <ul class="space-y-2">
+            <ul class="space-y-3">
               ${htmlCaracteristicas}
             </ul>
           </div>
@@ -535,7 +535,7 @@ function iniciarPestanasTecnicas() {
             </div>
           </div>
 
-          <div class="pt-2 flex flex-wrap gap-3">
+          <div class="pt-3 flex flex-wrap gap-3">
             <a
               href="#cotizador"
               onclick="seleccionarServicioCotizador('${clave}')"
