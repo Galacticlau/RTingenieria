@@ -563,7 +563,6 @@ function iniciarPestanasTecnicas() {
               target="_blank"
               class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-all inline-flex items-center gap-2"
             >
-              <span>Consultar al Área Técnica</span>
             </a>
           </div>
         </div>
