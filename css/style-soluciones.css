@@ -575,3 +575,220 @@ footer > div > .grid > div:last-child ul > li:nth-child(2) {
   line-height: 1.1rem;
   font-weight: 400;
 }
+
+/* ========================================================================== */
+/* PROPUESTA BICOLOR: PORTADA OSCURA + CUERPO CLARO                           */
+/* ========================================================================== */
+
+:root {
+  --tema-claro-fondo: #ffffff;
+  --tema-claro-alterno: #f5f7fa;
+  --tema-claro-tarjeta: #ffffff;
+  --tema-claro-borde: #e2e8f0;
+  --tema-claro-titulo: #0b192c;
+  --tema-claro-texto: #475569;
+  --tema-claro-texto-suave: #64748b;
+}
+
+/* Experiencia: primera transición desde la portada oscura hacia blanco. */
+#experiencia {
+  background: var(--tema-claro-fondo) !important;
+  border-color: var(--tema-claro-borde) !important;
+}
+
+#experiencia > div > .grid > div:first-child h2 {
+  color: var(--tema-claro-titulo) !important;
+}
+
+#experiencia > div > .grid > div:first-child p {
+  color: var(--tema-claro-texto) !important;
+}
+
+#experiencia > div > .grid > div:first-child strong {
+  color: #1e293b !important;
+}
+
+#experiencia > div > .grid > div:first-child .grid.grid-cols-2 > div {
+  background: #f8fafc !important;
+  border-color: var(--tema-claro-borde) !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+#experiencia > div > .grid > div:first-child .grid.grid-cols-2 .text-slate-300 {
+  color: #334155 !important;
+}
+
+#experiencia .contenedor-tarjeta-imagen {
+  border-color: #dbe3ec !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10) !important;
+}
+
+/* Soluciones eléctricas: gris muy claro para diferenciar la sección sin volver al oscuro. */
+#soluciones-electricas {
+  background: #f8fafc !important;
+  border-color: var(--tema-claro-borde) !important;
+}
+
+#soluciones-electricas > div > div:first-child > .text-center h2 {
+  color: var(--tema-claro-titulo) !important;
+}
+
+#soluciones-electricas > div > div:first-child > .text-center p {
+  color: var(--tema-claro-texto) !important;
+}
+
+#soluciones-electricas > div > div:first-child > .text-center p strong {
+  color: #1e293b !important;
+}
+
+#soluciones-electricas > div > div:first-child .contenedor-tarjeta-imagen {
+  border-color: #dbe3ec !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10) !important;
+}
+
+/* Explorador técnico pasa de panel oscuro a una superficie blanca corporativa. */
+#explorador-tecnico > div {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: var(--tema-claro-borde) !important;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08) !important;
+}
+
+#explorador-tecnico > div > div:first-child {
+  border-color: var(--tema-claro-borde) !important;
+}
+
+#explorador-tecnico h3,
+#explorador-tecnico #contenido-pestana-tecnica .text-white {
+  color: var(--tema-claro-titulo) !important;
+}
+
+#explorador-tecnico .text-slate-300,
+#explorador-tecnico .text-slate-400 {
+  color: var(--tema-claro-texto-suave) !important;
+}
+
+#explorador-tecnico .bg-slate-950,
+#explorador-tecnico .bg-slate-900,
+#explorador-tecnico .bg-slate-900\/80 {
+  background-color: #f8fafc !important;
+}
+
+#explorador-tecnico .border-slate-800,
+#explorador-tecnico .border-slate-700 {
+  border-color: var(--tema-claro-borde) !important;
+}
+
+#explorador-tecnico .boton-pestana-tecnica:not(.activa) {
+  background: #ffffff !important;
+  color: #475569 !important;
+  border-color: #dbe3ec !important;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+#explorador-tecnico .boton-pestana-tecnica:not(.activa):hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Los textos sobre fotografías se mantienen blancos para asegurar legibilidad. */
+#soluciones-electricas .capa-tarjeta-imagen .text-white,
+#soluciones-electricas .capa-tarjeta-imagen .text-slate-300,
+#soluciones-electricas .capa-tarjeta-imagen .text-slate-100,
+#explorador-tecnico .capa-tarjeta-imagen .text-white,
+#explorador-tecnico .capa-tarjeta-imagen .text-slate-300 {
+  color: #ffffff !important;
+}
+
+/* Soluciones industriales: blanco puro + acentos celestes. */
+#soluciones-industriales {
+  background: var(--tema-claro-fondo) !important;
+  border-color: var(--tema-claro-borde) !important;
+}
+
+#soluciones-industriales > div > .grid > div:first-child h2 {
+  color: var(--tema-claro-titulo) !important;
+}
+
+#soluciones-industriales > div > .grid > div:first-child p {
+  color: var(--tema-claro-texto) !important;
+}
+
+#soluciones-industriales > div > .grid > div:first-child strong {
+  color: #1e293b !important;
+}
+
+#soluciones-industriales > div > .grid > div:first-child .bg-slate-950 {
+  background: #f8fafc !important;
+  border-color: var(--tema-claro-borde) !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+}
+
+#soluciones-industriales > div > .grid > div:first-child .bg-slate-950 .text-slate-300 {
+  color: #475569 !important;
+}
+
+#soluciones-industriales .contenedor-tarjeta-imagen {
+  border-color: #dbe3ec !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.10) !important;
+}
+
+#soluciones-industriales .capa-tarjeta-imagen .text-white,
+#soluciones-industriales .capa-tarjeta-imagen .text-slate-100,
+#soluciones-industriales .capa-tarjeta-imagen .text-slate-300 {
+  color: #ffffff !important;
+}
+
+/* Suministros: un segundo tono claro ligeramente gris azulado. */
+#suministros {
+  background: var(--tema-claro-alterno) !important;
+  border-color: var(--tema-claro-borde) !important;
+}
+
+#suministros > div > .grid:first-child h2 {
+  color: var(--tema-claro-titulo) !important;
+}
+
+#suministros > div > .grid:first-child p,
+#suministros > div > .mt-7 p {
+  color: var(--tema-claro-texto) !important;
+}
+
+#suministros article {
+  background: var(--tema-claro-tarjeta) !important;
+  border-color: var(--tema-claro-borde) !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+#suministros article:hover {
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.09), 0 0 0 1px rgba(216, 155, 63, 0.20) !important;
+}
+
+#suministros article h3 {
+  color: var(--tema-claro-titulo) !important;
+}
+
+#suministros article p {
+  color: var(--tema-claro-texto) !important;
+}
+
+/* Cotizador y footer permanecen oscuros: cierre visual y contraste de acción. */
+#cotizador {
+  background: var(--marca-azul-oscuro-950) !important;
+}
+
+footer {
+  background: var(--marca-azul-oscuro-950) !important;
+}
+
+/* En móvil se conserva la misma lógica de contraste sin perder legibilidad. */
+@media (max-width: 1023px) {
+  #experiencia,
+  #soluciones-industriales {
+    background: #ffffff !important;
+  }
+
+  #soluciones-electricas,
+  #suministros {
+    background: #f8fafc !important;
+  }
+}
