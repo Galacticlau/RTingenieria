@@ -127,15 +127,59 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Botones de las pestañas técnicas */
 .boton-pestana-tecnica {
-  transition: all 0.3s ease;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 3.5rem;
+  padding-inline: clamp(0.55rem, 0.9vw, 1rem);
+  justify-content: center;
+  gap: clamp(0.35rem, 0.55vw, 0.55rem);
+  border-radius: 0.85rem;
+  font-size: clamp(0.68rem, 0.82vw, 0.82rem);
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.boton-pestana-tecnica span {
+  display: block;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.boton-pestana-tecnica svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex: 0 0 auto;
+}
+
+.boton-pestana-tecnica:not(.activa):hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 8px 18px rgba(2, 8, 23, 0.28);
 }
 
 .boton-pestana-tecnica.activa {
-  background-color: #d89b3f !important;
-  color: #0b192c !important;
+  background: linear-gradient(135deg, #e7aa48 0%, #d89b3f 100%) !important;
+  color: #07111f !important;
   font-weight: 700 !important;
-  box-shadow: 0 4px 18px rgba(216, 155, 63, 0.4) !important;
-  border-color: #d89b3f !important;
+  box-shadow:
+    0 8px 22px rgba(216, 155, 63, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+  border-color: #e7aa48 !important;
+}
+
+@media (max-width: 1100px) {
+  .boton-pestana-tecnica {
+    flex: 0 0 auto;
+    min-width: max-content;
+    padding-inline: 1rem;
+    font-size: 0.78rem;
+  }
 }
 
 /* Barra de desplazamiento personalizada */
