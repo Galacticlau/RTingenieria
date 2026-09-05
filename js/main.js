@@ -558,12 +558,7 @@ function iniciarPestanasTecnicas() {
               </svg>
             </a>
 
-            <a
-              href="https://wa.me/569681415257?text=Hola%20Daniel,%20necesito%20asesor%C3%ADa%20t%C3%A9cnica%20sobre%20${encodeURIComponent(datos.titulo)}"
-              target="_blank"
-              class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm border border-slate-700 transition-all inline-flex items-center gap-2"
-            >
-            </a>
+
           </div>
         </div>
 
