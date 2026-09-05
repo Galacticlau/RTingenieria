@@ -107,7 +107,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 4.25rem;
 }
 
-
 .tarjeta-industrial .resumen-tarjeta-industrial {
   opacity: 1;
   max-height: 5rem;
@@ -420,4 +419,10 @@ a[href="#ventajas"] {
   #contacto {
     min-height: auto !important;
   }
+}
+
+/* Sección de contacto retirada de la vista y de la navegación. */
+#contacto,
+a[href="#contacto"] {
+  display: none !important;
 }
