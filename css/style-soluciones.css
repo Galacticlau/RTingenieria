@@ -518,3 +518,11 @@ footer > div > .grid > div:last-child ul > li:nth-child(2) {
   content: none !important;
   display: none !important;
 }
+
+/* Ambos accesos destacados del nav tienen exactamente la misma altura. */
+#barra-navegacion-principal nav a[href="#soluciones-electricas"],
+#barra-navegacion-principal nav a[href="#soluciones-industriales"] {
+  height: 2.5rem !important;
+  min-height: 2.5rem !important;
+  box-sizing: border-box;
+}
