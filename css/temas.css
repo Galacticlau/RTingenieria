@@ -299,3 +299,61 @@ body.tema-claro #cotizador,
 body.tema-claro footer {
   background: #060e1a !important;
 }
+
+/* Refuerzo de especificidad: garantiza que el modo oscuro recupere el diseño
+   anterior incluso frente a las reglas claras históricas del archivo principal. */
+body:not(.tema-claro) #experiencia > div > .grid > div:first-child h2,
+body:not(.tema-claro) #soluciones-electricas > div > div:first-child > .text-center h2,
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child h2,
+body:not(.tema-claro) #suministros > div > .grid:first-child h2 {
+  color: #ffffff !important;
+}
+
+body:not(.tema-claro) #experiencia > div > .grid > div:first-child p.text-slate-300,
+body:not(.tema-claro) #soluciones-electricas > div > div:first-child > .text-center p.text-slate-300,
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child p.text-slate-300,
+body:not(.tema-claro) #suministros > div > .grid:first-child p.text-slate-300 {
+  color: #cbd5e1 !important;
+}
+
+body:not(.tema-claro) #experiencia > div > .grid > div:first-child p.text-slate-400,
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child p.text-slate-400,
+body:not(.tema-claro) #suministros > div > .mt-7 p.text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+body:not(.tema-claro) #experiencia > div > .grid > div:first-child strong,
+body:not(.tema-claro) #soluciones-electricas > div > div:first-child > .text-center strong,
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child strong {
+  color: inherit !important;
+}
+
+body:not(.tema-claro) #experiencia > div > .grid > div:first-child .grid.grid-cols-2 > div,
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child .bg-slate-950 {
+  background: #020617 !important;
+  border-color: #1e293b !important;
+  box-shadow: none !important;
+}
+
+body:not(.tema-claro) #suministros article h3 {
+  color: #ffffff !important;
+}
+
+body:not(.tema-claro) #suministros article p {
+  color: #cbd5e1 !important;
+}
+
+/* El título industrial conserva la tipografía y el degradado celeste originales. */
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child h2,
+body.tema-claro #soluciones-industriales > div > .grid > div:first-child h2 {
+  font-family: var(--fuente-titulos) !important;
+  font-weight: 900 !important;
+}
+
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child h2 > span.text-transparent,
+body.tema-claro #soluciones-industriales > div > .grid > div:first-child h2 > span.text-transparent {
+  color: transparent !important;
+  background-image: linear-gradient(to right, #38bdf8, #3b82f6) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
