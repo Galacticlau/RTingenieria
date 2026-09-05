@@ -151,6 +151,20 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 
+/* Las etiquetas no tienen el mismo largo: PMU y SCADA reciben más espacio. */
+.boton-pestana-tecnica[data-pestana="pmu"] {
+  flex-grow: 1.28;
+}
+
+.boton-pestana-tecnica[data-pestana="scada"] {
+  flex-grow: 1.12;
+}
+
+/* Evita que una etiqueta pueda dibujarse sobre la pestaña siguiente. */
+.boton-pestana-tecnica {
+  overflow: hidden;
+}
+
 .boton-pestana-tecnica svg {
   width: 0.95rem;
   height: 0.95rem;
