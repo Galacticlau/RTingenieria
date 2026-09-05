@@ -367,7 +367,7 @@
     <div class="max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
       <!-- Primera pantalla: especialidad y servicios visuales -->
-      <div class="min-h-screen lg:min-h-[calc(100vh-6rem)] py-10 flex flex-col justify-center">
+      <div class="min-h-screen lg:min-h-[calc(100vh-8rem)] py-10 flex flex-col justify-center">
       
         <!-- Título de la sección -->
         <div class="text-center max-w-6xl mx-auto space-y-4">
@@ -380,7 +380,7 @@
             Soluciones Eléctricas & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Sector Energético</span>
           </h2>
 
-          <p class="text-center text-slate-300 text-base sm:text-lg leading-relaxed lg:whitespace-nowrap">
+          <p class="mx-auto text-center text-slate-300 text-base sm:text-lg lg:text-base leading-relaxed lg:w-max lg:max-w-none lg:whitespace-nowrap">
             En RT POWER desarrollamos soluciones para proyectos <strong>PMGD y Netbilling</strong>, alineadas con los requerimientos técnicos y normativos del <strong>Coordinador Eléctrico Nacional (CEN)</strong>.
           </p>
         </div>
@@ -388,7 +388,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           
           <!-- 01 Sincronización Horaria -->
-          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400" role="button" tabindex="0" onclick="abrirPestanaTecnica('gps')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirPestanaTecnica('gps')}">
             <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Sincronización horaria GPS" class="w-full h-64 object-cover" />
             <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
               <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">01</span>
@@ -400,7 +400,7 @@
           </div>
 
           <!-- 02 PMU -->
-          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400" role="button" tabindex="0" onclick="abrirPestanaTecnica('pmu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirPestanaTecnica('pmu')}">
             <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="Medición fasorial PMU" class="w-full h-64 object-cover" />
             <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
               <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">02</span>
@@ -412,7 +412,7 @@
           </div>
 
           <!-- 03 SITR -->
-          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400" role="button" tabindex="0" onclick="abrirPestanaTecnica('sitr')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirPestanaTecnica('sitr')}">
             <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="SITR tiempo real CEN" class="w-full h-64 object-cover" />
             <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
               <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">03</span>
@@ -424,7 +424,7 @@
           </div>
 
           <!-- 04 SLRP -->
-          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400" role="button" tabindex="0" onclick="abrirPestanaTecnica('slrp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirPestanaTecnica('slrp')}">
             <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="SLRP oscilografías" class="w-full h-64 object-cover" />
             <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
               <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">04</span>
@@ -436,7 +436,7 @@
           </div>
 
           <!-- 05 Monitoreo y Control -->
-          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400" role="button" tabindex="0" onclick="abrirPestanaTecnica('scada')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirPestanaTecnica('scada')}">
             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Monitoreo y control remoto" class="w-full h-64 object-cover" />
             <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
               <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">05</span>
@@ -448,7 +448,7 @@
           </div>
 
           <!-- 06 Informes y Reportes -->
-          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-400" role="button" tabindex="0" onclick="abrirPestanaTecnica('pmgd')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirPestanaTecnica('pmgd')}">
             <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Informes y reportes operacionales" class="w-full h-64 object-cover" />
             <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
               <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">06</span>
@@ -463,7 +463,7 @@
       </div>
 
       <!-- Segunda pantalla: explorador técnico interactivo -->
-      <div class="py-8 flex items-start">
+      <div id="explorador-tecnico" class="scroll-mt-24 py-8 flex items-start">
       <!-- EXPLORADOR TÉCNICO INTERACTIVO CON FOTOGRAFÍAS -->
       <div class="w-full lg:h-[46.5rem] bg-slate-900/80 rounded-3xl p-5 lg:p-6 border border-slate-800 shadow-2xl backdrop-blur-xl">
         
