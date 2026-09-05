@@ -486,23 +486,23 @@ function iniciarPestanasTecnicas() {
       .join('');
 
     contenedor.innerHTML = `
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start animar-aparicion">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animar-aparicion">
 
         <!-- Columna izquierda: descripción y características -->
-        <div class="lg:col-span-7 space-y-6">
+        <div class="lg:col-span-7 space-y-4">
           <div>
 
-            <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
+            <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight">
               ${datos.titulo}
             </h3>
 
-            <p class="text-slate-300 text-base mt-3 leading-relaxed">
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
               ${datos.descripcion}
             </p>
           </div>
 
-          <div class="bg-slate-900/90 rounded-2xl p-5 border border-slate-800">
-            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800">
+            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
               <svg
                 class="w-4 h-4 text-amber-400"
                 fill="none"
@@ -520,7 +520,7 @@ function iniciarPestanasTecnicas() {
               Alcance técnico y entregables
             </h4>
 
-            <ul class="space-y-3">
+            <ul class="space-y-2">
               ${htmlCaracteristicas}
             </ul>
           </div>
@@ -575,10 +575,10 @@ function iniciarPestanasTecnicas() {
             <img
               src="${datos.imagen}"
               alt="${datos.titulo}"
-              class="w-full h-52 sm:h-64 object-cover"
+              class="w-full h-44 sm:h-48 object-cover"
             />
 
-            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-5">
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-4">
               <span class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">
                 RT POWER en Terreno
               </span>
@@ -589,7 +589,7 @@ function iniciarPestanasTecnicas() {
             </div>
           </div>
 
-          <div class="bg-gradient-to-b from-slate-900 to-slate-950 p-5 rounded-2xl border border-slate-800 shadow-xl">
+          <div class="bg-gradient-to-b from-slate-900 to-slate-950 p-4 rounded-2xl border border-slate-800 shadow-xl">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
               <div class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">
                 Metodología de Trabajo RT POWER
@@ -600,7 +600,7 @@ function iniciarPestanasTecnicas() {
               </span>
             </div>
 
-            <div class="space-y-3">
+            <div class="space-y-2">
               ${htmlEtapas}
             </div>
 
