@@ -316,3 +316,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.18;
   }
 }
+
+/* Composición de la sección de suministros en escritorio.
+   El encabezado queda un poco más alto y se aumenta el aire antes de las tarjetas,
+   manteniendo toda la sección dentro de una pantalla. */
+@media (min-width: 1280px) {
+  #suministros > div > .grid:first-child {
+    transform: translateY(-2rem);
+  }
+
+  #suministros > div > .grid:first-child + .grid {
+    margin-top: 4.25rem;
+  }
+}
