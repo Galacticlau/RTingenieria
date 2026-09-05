@@ -390,3 +390,21 @@ a[href="#ventajas"] {
     padding-top: 1rem;
   }
 }
+
+/* Alineación exacta de las secciones al navegar desde el menú superior.
+   En escritorio cada sección comienza en el borde superior del viewport y,
+   si su contenido es corto, ocupa como mínimo una pantalla completa. */
+@media (min-width: 1024px) {
+  section[id] {
+    scroll-margin-top: 0 !important;
+  }
+
+  #experiencia,
+  #soluciones-electricas,
+  #soluciones-industriales,
+  #suministros,
+  #cotizador,
+  #contacto {
+    min-height: 100vh !important;
+  }
+}
