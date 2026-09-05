@@ -830,7 +830,7 @@ function iniciarCotizadorProyecto() {
         const numeroTelefono =
           mensaje.destinatario === 'comercial'
             ? '56942584408'
-            : '569681415257';
+            : '56942584408';
 
         const mensajeCodificado = encodeURIComponent(
           mensaje.texto
@@ -855,7 +855,7 @@ function iniciarCotizadorProyecto() {
         const correoDestino =
           mensaje.destinatario === 'comercial'
             ? 'elisabet.tobar@rtpower.cl'
-            : 'daniel.retamal@rtpower.cl';
+            : 'elisabet.tobar@rtpower.cl';
 
         const asunto = encodeURIComponent(
           `Cotización RT POWER: ${mensaje.servicio} - ${mensaje.nombre}`
