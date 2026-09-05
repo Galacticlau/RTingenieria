@@ -1,3 +1,107 @@
+/* ========================================================================== */
+/* Selector de tema oscuro / claro                                            */
+/* ========================================================================== */
+
+(function prepararTemasRTPOWER() {
+  const enlaceTemas = document.createElement('link');
+  enlaceTemas.rel = 'stylesheet';
+  enlaceTemas.href = 'css/temas.css';
+  document.head.appendChild(enlaceTemas);
+
+  try {
+    if (localStorage.getItem('rtpower-tema') === 'claro') {
+      document.body.classList.add('tema-claro');
+    }
+  } catch (error) {
+    /* Si el navegador bloquea localStorage, se mantiene el tema oscuro. */
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', iniciarSelectorTemaRTPOWER);
+
+function iniciarSelectorTemaRTPOWER() {
+  const barra = document.getElementById('barra-navegacion-principal');
+  const menuMovil = document.getElementById('menu-movil');
+
+  function crearBotonTema(sufijo) {
+    const boton = document.createElement('button');
+    boton.type = 'button';
+    boton.id = `boton-cambiar-tema-${sufijo}`;
+    boton.className = 'boton-cambiar-tema';
+    boton.setAttribute('aria-live', 'polite');
+    return boton;
+  }
+
+  const botonesTema = [];
+
+  if (barra) {
+    const enlaceCotizador = barra.querySelector('a[href="#cotizador"]');
+    const contenedorAcciones = enlaceCotizador?.parentElement;
+
+    if (contenedorAcciones && enlaceCotizador) {
+      const botonEscritorio = crearBotonTema('escritorio');
+      contenedorAcciones.insertBefore(botonEscritorio, enlaceCotizador);
+      botonesTema.push(botonEscritorio);
+    }
+  }
+
+  if (menuMovil) {
+    const botonCerrar = document.getElementById('cerrar-menu-movil');
+    const cabeceraMovil = botonCerrar?.parentElement;
+
+    if (cabeceraMovil && botonCerrar) {
+      const botonMovil = crearBotonTema('movil');
+      botonMovil.classList.add('ml-auto', 'mr-2');
+      cabeceraMovil.insertBefore(botonMovil, botonCerrar);
+      botonesTema.push(botonMovil);
+    }
+  }
+
+  if (!botonesTema.length) return;
+
+  const iconoSol = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+    </svg>`;
+
+  const iconoLuna = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+    </svg>`;
+
+  function actualizarBotones() {
+    const temaClaro = document.body.classList.contains('tema-claro');
+
+    botonesTema.forEach(boton => {
+      boton.innerHTML = temaClaro ? iconoLuna : iconoSol;
+      boton.title = temaClaro ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro';
+      boton.setAttribute(
+        'aria-label',
+        temaClaro ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro'
+      );
+    });
+  }
+
+  function alternarTema() {
+    const temaClaro = document.body.classList.toggle('tema-claro');
+
+    try {
+      localStorage.setItem('rtpower-tema', temaClaro ? 'claro' : 'oscuro');
+    } catch (error) {
+      /* El cambio sigue funcionando aunque no se pueda guardar la preferencia. */
+    }
+
+    actualizarBotones();
+  }
+
+  botonesTema.forEach(boton => {
+    boton.addEventListener('click', alternarTema);
+  });
+
+  actualizarBotones();
+}
+
 /**
  * RT POWER - Interactividad y lógica del sitio
  * Controla el menú, las pestañas técnicas, el cotizador, WhatsApp,
