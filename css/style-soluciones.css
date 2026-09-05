@@ -335,3 +335,41 @@ h1, h2, h3, h4, h5, h6 {
 a[href="#ventajas"] {
   display: none !important;
 }
+
+/* Cotizador compacto en escritorio: aprovecha mejor la altura disponible
+   para que el encabezado, formulario y botones queden visibles en una sola pantalla. */
+@media (min-width: 1024px) {
+  #cotizador {
+    min-height: calc(100vh - 5rem);
+    padding-top: 2.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  #cotizador > div > .text-center {
+    margin-bottom: 2rem !important;
+  }
+
+  #cotizador > div > .grid {
+    gap: 1.5rem !important;
+  }
+
+  #formulario-cotizacion-proyecto {
+    --tw-space-y-reverse: 0;
+  }
+
+  #formulario-cotizacion-proyecto > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem !important;
+  }
+
+  #formulario-cotizacion-proyecto textarea {
+    min-height: 5.25rem;
+  }
+
+  #resumen-cotizacion {
+    max-height: 13rem !important;
+  }
+
+  #cotizador #resumen-cotizacion + div {
+    margin-top: 1rem !important;
+  }
+}
