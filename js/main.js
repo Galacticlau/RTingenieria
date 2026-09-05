@@ -177,7 +177,6 @@ const datosTecnicos = {
     ],
 
     textoBoton: 'Consultar Integración SITR',
-
     etapas: [
       {
         numero: '01',
@@ -724,11 +723,69 @@ function iniciarCotizadorProyecto() {
     'enviar-cotizacion-whatsapp'
   );
 
-  const botonEnviarCorreo = document.getElementById(
+  if (!formulario) return;
+
+  /*
+   * Ya existe un único canal comercial para las solicitudes.
+   * Por eso se elimina la selección inicial de área y el formulario
+   * comienza directamente por la solución requerida.
+   */
+  const radioDestino = formulario.querySelector(
+    'input[name="cotizacion-destino"]'
+  );
+
+  const cuadriculaDestino = radioDestino?.closest('.grid');
+  const bloqueDestino = cuadriculaDestino?.parentElement;
+
+  if (bloqueDestino) {
+    bloqueDestino.remove();
+  }
+
+  const etiquetaServicio = formulario.querySelector(
+    'label[for="cotizacion-servicio"]'
+  );
+
+  if (etiquetaServicio) {
+    etiquetaServicio.textContent = '1. Solución Requerida *';
+  }
+
+  /*
+   * Reemplaza el botón genérico de correo por dos accesos claros:
+   * Gmail y Outlook/Hotmail. Ambos abren un mensaje nuevo ya completado.
+   */
+  const botonCorreoAnterior = document.getElementById(
     'enviar-cotizacion-correo'
   );
 
-  if (!formulario) return;
+  if (botonCorreoAnterior) {
+    const contenedorCorreos = document.createElement('div');
+    contenedorCorreos.className = 'grid grid-cols-1 sm:grid-cols-2 gap-3';
+
+    contenedorCorreos.innerHTML = `
+      <button id="enviar-cotizacion-gmail" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm border border-slate-700 transition-all flex items-center justify-center gap-2">
+        <i data-lucide="mail" class="w-5 h-5 text-amber-400"></i>
+        <span>Abrir Gmail</span>
+      </button>
+      <button id="enviar-cotizacion-outlook" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm border border-slate-700 transition-all flex items-center justify-center gap-2">
+        <i data-lucide="mail-open" class="w-5 h-5 text-sky-400"></i>
+        <span>Outlook / Hotmail</span>
+      </button>
+    `;
+
+    botonCorreoAnterior.replaceWith(contenedorCorreos);
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  }
+
+  const botonEnviarGmail = document.getElementById(
+    'enviar-cotizacion-gmail'
+  );
+
+  const botonEnviarOutlook = document.getElementById(
+    'enviar-cotizacion-outlook'
+  );
 
   function generarMensaje() {
     const nombre =
@@ -763,26 +820,24 @@ function iniciarCotizadorProyecto() {
       document.getElementById('cotizacion-detalles')?.value.trim() ||
       'Solicitud de contacto y evaluación técnica.';
 
-    const destinatario =
-      document.querySelector(
-        'input[name="cotizacion-destino"]:checked'
-      )?.value || 'tecnica';
-
+    /*
+     * Se evita el uso de emojis para que el texto conserve el mismo aspecto
+     * en WhatsApp Web, Windows, Android, iPhone y clientes de correo.
+     */
     const texto =
-      `*SOLICITUD DE COTIZACIÓN - RT POWER*\n\n` +
-      `👤 *Cliente:* ${nombre}\n` +
-      `🏢 *Empresa:* ${empresa}\n` +
-      `📞 *Teléfono:* ${telefono}\n` +
-      `✉️ *Correo:* ${correo}\n` +
-      `⚡ *Servicio requerido:* ${servicio}\n` +
-      `📍 *Ubicación:* ${region}\n` +
-      `⏱️ *Plazo o urgencia:* ${urgencia}\n\n` +
-      `📝 *Detalles del proyecto:*\n${detalles}\n\n` +
-      `_Enviado desde el portal web www.rtpower.cl_`;
+      `SOLICITUD DE COTIZACIÓN - RT POWER\n\n` +
+      `Cliente: ${nombre}\n` +
+      `Empresa: ${empresa}\n` +
+      `Teléfono: ${telefono}\n` +
+      `Correo: ${correo}\n` +
+      `Servicio requerido: ${servicio}\n` +
+      `Ubicación: ${region}\n` +
+      `Plazo / urgencia: ${urgencia}\n\n` +
+      `Detalles del proyecto:\n${detalles}\n\n` +
+      `Enviado desde www.rtpower.cl`;
 
     return {
       texto,
-      destinatario,
       nombre,
       servicio
     };
@@ -826,49 +881,57 @@ function iniciarCotizadorProyecto() {
         evento.preventDefault();
 
         const mensaje = generarMensaje();
-
-        const numeroTelefono =
-          mensaje.destinatario === 'comercial'
-            ? '56942584408'
-            : '56942584408';
-
-        const mensajeCodificado = encodeURIComponent(
-          mensaje.texto
-        );
-
+        const numeroTelefono = '56942584408';
+        const mensajeCodificado = encodeURIComponent(mensaje.texto);
         const enlace =
           `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
 
-        window.open(enlace, '_blank');
+        window.open(enlace, '_blank', 'noopener,noreferrer');
       }
     );
   }
 
-  if (botonEnviarCorreo) {
-    botonEnviarCorreo.addEventListener(
-      'click',
-      evento => {
-        evento.preventDefault();
+  function obtenerDatosCorreo() {
+    const mensaje = generarMensaje();
+    const correoDestino = 'elisabet.tobar@rtpower.cl';
+    const asuntoSinCodificar =
+      `Cotización RT POWER: ${mensaje.servicio} - ${mensaje.nombre}`;
 
-        const mensaje = generarMensaje();
+    return {
+      correoDestino,
+      asunto: encodeURIComponent(asuntoSinCodificar),
+      cuerpo: encodeURIComponent(mensaje.texto)
+    };
+  }
 
-        const correoDestino =
-          mensaje.destinatario === 'comercial'
-            ? 'elisabet.tobar@rtpower.cl'
-            : 'elisabet.tobar@rtpower.cl';
+  if (botonEnviarGmail) {
+    botonEnviarGmail.addEventListener('click', evento => {
+      evento.preventDefault();
 
-        const asunto = encodeURIComponent(
-          `Cotización RT POWER: ${mensaje.servicio} - ${mensaje.nombre}`
-        );
+      const correo = obtenerDatosCorreo();
+      const enlaceGmail =
+        `https://mail.google.com/mail/?view=cm&fs=1` +
+        `&to=${encodeURIComponent(correo.correoDestino)}` +
+        `&su=${correo.asunto}` +
+        `&body=${correo.cuerpo}`;
 
-        const cuerpo = encodeURIComponent(
-          mensaje.texto
-        );
+      window.open(enlaceGmail, '_blank', 'noopener,noreferrer');
+    });
+  }
 
-        window.location.href =
-          `mailto:${correoDestino}?subject=${asunto}&body=${cuerpo}`;
-      }
-    );
+  if (botonEnviarOutlook) {
+    botonEnviarOutlook.addEventListener('click', evento => {
+      evento.preventDefault();
+
+      const correo = obtenerDatosCorreo();
+      const enlaceOutlook =
+        `https://outlook.live.com/mail/0/deeplink/compose` +
+        `?to=${encodeURIComponent(correo.correoDestino)}` +
+        `&subject=${correo.asunto}` +
+        `&body=${correo.cuerpo}`;
+
+      window.open(enlaceOutlook, '_blank', 'noopener,noreferrer');
+    });
   }
 }
 
