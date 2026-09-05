@@ -97,7 +97,7 @@ const datosTecnicos = {
     insignia: 'NORMATIVA CEN & SEC',
 
     imagen:
-      'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=85',
 
     descripcionImagen:
       'Planta solar PMGD - Integración de media tensión y telemedida',
