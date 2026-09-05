@@ -37,6 +37,11 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Alinea los enlaces del menú justo debajo de la barra fija. */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--fuente-titulos);
 }
