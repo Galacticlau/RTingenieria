@@ -357,3 +357,55 @@ body.tema-claro #soluciones-industriales > div > .grid > div:first-child h2 > sp
   -webkit-background-clip: text !important;
   background-clip: text !important;
 }
+
+/* El encabezado industrial replica la jerarquía visual del título eléctrico,
+   pero utiliza el degradado celeste propio de esta sección. */
+#soluciones-industriales > div > .grid > div:first-child h2 {
+  font-family: var(--fuente-titulos) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.08 !important;
+  font-size: 0 !important;
+}
+
+#soluciones-industriales > div > .grid > div:first-child h2::before {
+  content: "Soluciones Industriales &";
+  display: block;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+#soluciones-industriales > div > .grid > div:first-child h2::after {
+  content: "Control y Automatización";
+  display: block;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: transparent;
+  background-image: linear-gradient(to right, #38bdf8, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+body:not(.tema-claro) #soluciones-industriales > div > .grid > div:first-child h2::before {
+  color: #ffffff;
+}
+
+body.tema-claro #soluciones-industriales > div > .grid > div:first-child h2::before {
+  color: var(--tema-claro-titulo);
+}
+
+@media (min-width: 640px) {
+  #soluciones-industriales > div > .grid > div:first-child h2::before,
+  #soluciones-industriales > div > .grid > div:first-child h2::after {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #soluciones-industriales > div > .grid > div:first-child h2::before,
+  #soluciones-industriales > div > .grid > div:first-child h2::after {
+    font-size: 3rem;
+    line-height: 1.05;
+  }
+}
