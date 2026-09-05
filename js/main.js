@@ -626,12 +626,14 @@ function iniciarPestanasTecnicas() {
           'activa',
           'bg-amber-500',
           'text-slate-950',
-          'font-bold'
+          'font-bold',
+          'border-amber-500'
         );
 
         botonPestana.classList.add(
           'bg-slate-900',
-          'text-slate-300'
+          'text-slate-300',
+          'border-slate-800'
         );
       });
 
@@ -639,12 +641,14 @@ function iniciarPestanasTecnicas() {
         'activa',
         'bg-amber-500',
         'text-slate-950',
-        'font-bold'
+        'font-bold',
+        'border-amber-500'
       );
 
       boton.classList.remove(
         'bg-slate-900',
-        'text-slate-300'
+        'text-slate-300',
+        'border-slate-800'
       );
 
       const claveSeleccionada = boton.dataset.pestana;
