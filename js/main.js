@@ -659,6 +659,29 @@ function iniciarPestanasTecnicas() {
 }
 
 /*
+ * Abre desde una tarjeta visual la pestaña técnica correspondiente
+ * y desplaza suavemente el explorador hasta el inicio visible.
+ */
+window.abrirPestanaTecnica = function (clavePestana) {
+  const botonPestana = document.querySelector(
+    `.boton-pestana-tecnica[data-pestana="${clavePestana}"]`
+  );
+
+  const exploradorTecnico = document.getElementById(
+    'explorador-tecnico'
+  );
+
+  if (!botonPestana || !exploradorTecnico) return;
+
+  botonPestana.click();
+
+  exploradorTecnico.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+};
+
+/*
  * Permite que un botón de las pestañas seleccione automáticamente
  * el servicio correspondiente dentro del cotizador.
  */
