@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RT POWER | Ingeniería, Servicios y Soluciones Eléctricas</title>
+  <meta name="description" content="RT POWER es una empresa chilena dedicada a ingeniería, servicios y productos eléctricos para el sector energético, industrias y profesionales de la electricidad. Especialistas en PMGD, normativa CEN y automatización." />
+  <meta name="keywords" content="RT POWER, soluciones eléctricas, PMGD, Netbilling, CEN, SITR, SLRP, PMU, sincronización horaria, tableros eléctricos, SEC Clase A, ingeniería eléctrica Chile, VIR ingeniería" />
+  
+  <!-- Metadatos para compartir en redes sociales -->
+  <meta property="og:title" content="RT POWER | Energía, Ingeniería e Innovación Eléctrica" />
+  <meta property="og:description" content="Soluciones integrales en generación, transmisión y distribución de energía. Certificación SEC Clase A y cumplimiento normativo CEN." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.rtpower.cl" />
+
+  <!-- Ícono de la pestaña del navegador -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b192c'/><path d='M50 15 L25 55 L48 55 L40 85 L75 45 L52 45 Z' fill='%23d89b3f'/></svg>" />
+
+  <!-- Biblioteca de estilos Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            marca: {
+              'azul-oscuro': {
+                950: '#060e1a',
+                900: '#0b192c',
+                800: '#132742',
+                700: '#1e3a5f',
+              },
+              dorado: {
+                300: '#facc15',
+                400: '#eab308',
+                500: '#d89b3f',
+                600: '#b45309',
+              },
+              azul: {
+                400: '#38bdf8',
+                500: '#0284c7',
+                600: '#0369a1',
+              }
+            }
+          },
+          fontFamily: {
+            titulos: ['Outfit', 'sans-serif'],
+            cuerpo: ['Plus Jakarta Sans', 'sans-serif'],
+            monoespaciada: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Biblioteca de íconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Importar css -->
+  <link rel="stylesheet" href="css/style-soluciones.css" />
+</head>
+
+<body class="bg-slate-950 text-slate-100 selection:bg-marca-dorado-500 selection:text-slate-950">
+  <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
+  <header id="barra-navegacion-principal" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-marca-azul-oscuro-950/90 backdrop-blur-xl border-b border-slate-800/80 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="#inicio" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-marca-dorado-400 via-marca-dorado-500 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/25 text-slate-950 font-black">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-1">
+            <span class="text-2xl font-black tracking-tight text-white group-hover:text-amber-400 transition-colors">RT<span class="text-marca-dorado-500">POWER</span></span>
+          </div>
+          <span class="block text-[10px] tracking-widest uppercase font-mono text-slate-400 font-bold">Ingeniería y Servicios</span>
+        </div>
+      </a>
+
+      <!-- NAVEGACIÓN PARA COMPUTADOR -->
+      <nav class="hidden xl:flex items-center space-x-1 font-medium text-sm text-slate-300">
+        <a href="#inicio" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Inicio</a>
+        <a href="#experiencia" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Experiencia</a>
+        
+        <!-- Soluciones Eléctricas Destacado -->
+        <a href="#soluciones-electricas" class="px-4 py-2 rounded-xl text-amber-400 bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20 transition-all flex items-center gap-2 font-bold shadow-sm">
+          <i data-lucide="zap" class="w-4 h-4 fill-amber-400/30"></i>
+          <span>Soluciones Eléctricas</span>
+          <span class="text-[10px] px-1.5 py-0.5 bg-amber-500 text-slate-950 font-extrabold rounded">CEN</span>
+        </a>
+
+        <a href="#soluciones-industriales" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Control & Automatización</a>
+        <a href="#suministros" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Suministros</a>
+        <a href="#ventajas" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Ventajas</a>
+        <a href="#contacto" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition-colors">Contacto</a>
+      </nav>
+
+      <!-- BOTÓN PRINCIPAL DE COTIZACIÓN -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="#cotizador" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-extrabold text-sm transition-all shadow-lg shadow-amber-500/25 flex items-center gap-2 transform hover:-translate-y-0.5">
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+          <span>Cotizar Proyecto</span>
+        </a>
+      </div>
+
+      <!-- BOTÓN DEL MENÚ MÓVIL -->
+      <button id="boton-menu-movil" class="xl:hidden p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700" aria-label="Abrir menú">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- PANEL DEL MENÚ MÓVIL -->
+  <div id="menu-movil" class="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-2xl hidden flex flex-col p-6 overflow-y-auto">
+    <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-marca-dorado-500 flex items-center justify-center text-slate-950 font-black">
+          <i data-lucide="zap" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xl font-bold text-white">RT<span class="text-marca-dorado-500">POWER</span></span>
+          <span class="block text-[10px] uppercase font-mono text-slate-400">Ingeniería y Servicios</span>
+        </div>
+      </div>
+      <button id="cerrar-menu-movil" class="p-2.5 rounded-xl bg-slate-800 text-slate-400 hover:text-white">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <nav class="flex flex-col space-y-3 py-6 text-base font-medium">
+      <a href="#inicio" class="enlace-menu-movil p-3 rounded-xl hover:bg-slate-800 text-slate-200">Inicio</a>
+      <a href="#experiencia" class="enlace-menu-movil p-3 rounded-xl hover:bg-slate-800 text-slate-200">Experiencia & Empresa</a>
+      <a href="#soluciones-electricas" class="enlace-menu-movil p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold flex items-center justify-between">
+        <span class="flex items-center gap-2">
+          <i data-lucide="zap" class="w-4 h-4"></i> Soluciones Eléctricas & CEN
+        </span>
+        <span class="text-xs bg-amber-500 text-slate-950 px-2 py-0.5 rounded font-mono font-bold">Destacado</span>
+      </a>
+      <a href="#soluciones-industriales" class="enlace-menu-movil p-3 rounded-xl hover:bg-slate-800 text-slate-200">Control & Automatización</a>
+      <a href="#suministros" class="enlace-menu-movil p-3 rounded-xl hover:bg-slate-800 text-slate-200">Suministros y Ferretería Técnica</a>
+      <a href="#ventajas" class="enlace-menu-movil p-3 rounded-xl hover:bg-slate-800 text-slate-200">Nuestras Ventajas (SEC A)</a>
+      <a href="#cotizador" class="enlace-menu-movil p-3 rounded-xl hover:bg-slate-800 text-slate-200">Cotizador de Proyectos</a>
+      <a href="#contacto" class="enlace-menu-movil p-3 rounded-xl hover:bg-slate-800 text-slate-200">Contacto Directo</a>
+    </nav>
+
+    <div class="mt-auto pt-6 border-t border-slate-800 space-y-3">
+      <a href="https://wa.me/569681415257?text=Hola%20Daniel,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20t%C3%A9cnica." target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white font-semibold text-sm flex items-center justify-center gap-2">
+        <i data-lucide="wrench" class="w-4 h-4 text-amber-400"></i>
+        <span>WhatsApp Área Técnica (Daniel)</span>
+      </a>
+      <a href="https://wa.me/56942584408?text=Hola%20Elisabet,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20comercial." target="_blank" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm flex items-center justify-center gap-2">
+        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        <span>WhatsApp Área Comercial (Elisabet)</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- PORTADA PRINCIPAL CON FOTOGRAFÍA -->
+  <section id="inicio" class="relative pt-32 pb-24 md:pt-44 md:pb-36 fondo-portada-foto overflow-hidden border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Contenido izquierdo de la portada -->
+        <div class="lg:col-span-7 space-y-7 text-left">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/40 text-xs font-mono text-slate-200 shadow-xl backdrop-blur-md">
+            <span class="flex h-2.5 w-2.5 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-80"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+            </span>
+            <span class="text-amber-400 font-bold">RT POWER</span>
+            <span class="text-slate-500">|</span>
+            <span class="text-slate-200">Ingeniería e Innovación Eléctrica</span>
+          </div>
+
+          <!-- Título principal de la portada -->
+          <h1 class="titulo-portada text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]">
+            Ingeniería que conecta. <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">
+              Soluciones eléctricas
+            </span> que impulsan.
+          </h1>
+
+          <!-- Descripción de la portada -->
+          <p class="text-lg sm:text-xl text-slate-200 max-w-2xl leading-relaxed font-normal">
+            Empresa chilena especializada en soluciones integrales para el sector energético e industrial. Acompañamos tus proyectos de <strong>Generación (PMGD/Netbilling), Transmisión y Distribución</strong> con certificación <strong>SEC Clase A</strong> y estricto cumplimiento del <strong>Coordinador Eléctrico Nacional (CEN)</strong>.
+          </p>
+
+          <!-- Cuadrícula de características principales -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1 text-sm text-slate-200">
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+              </div>
+              <span>Ingenieros Eléctricos <strong>SEC Clase A</strong></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+              </div>
+              <span>Integración <strong>SITR, SLRP y PMU</strong> para CEN</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+              </div>
+              <span>Evaluación técnica directa en terreno</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
+                <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i>
+              </div>
+              <span>Control, Automatización y Suministro B2B</span>
+            </div>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="pt-3 flex flex-wrap items-center gap-4">
+            <a href="#soluciones-electricas" class="px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-yellow-400 text-slate-950 font-black text-base transition-all shadow-xl shadow-amber-500/30 flex items-center gap-3 transform hover:-translate-y-0.5">
+              <i data-lucide="zap" class="w-5 h-5 fill-slate-950"></i>
+              <span>Explorar Soluciones Eléctricas</span>
+            </a>
+            <a href="#contacto" class="px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-white font-bold text-base border border-slate-700/90 transition-all flex items-center gap-2.5 backdrop-blur-md">
+              <i data-lucide="calendar" class="w-5 h-5 text-amber-400"></i>
+              <span>Agendar Visita a Terreno</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Tarjeta visual derecha -->
+        <div class="lg:col-span-5">
+          <div class="panel-cristal-oscuro rounded-3xl p-6 sm:p-7 border border-slate-700/80 shadow-2xl relative space-y-5">
+            
+            <!-- Tarjeta con fotografía real -->
+            <div class="contenedor-tarjeta-imagen border border-slate-700/80">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Ingenieros RT POWER en terreno" class="w-full h-48 object-cover" />
+              <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-4">
+                <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Ingeniería en Terreno</span>
+                <p class="text-xs text-white font-semibold mt-0.5">Especialistas preparados para evaluar y dar cumplimiento normativo</p>
+              </div>
+            </div>
+
+            <!-- Insignias de cumplimiento -->
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="flex items-center gap-2 text-amber-400 font-bold mb-1">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                  <span>Normativa CEN</span>
+                </div>
+                <div class="text-[11px] text-slate-400">SITR · SLRP · PMU · Sincronía GPS</div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div class="flex items-center gap-2 text-sky-400 font-bold mb-1">
+                  <i data-lucide="check-circle" class="w-4 h-4"></i>
+                  <span>SEC Clase A</span>
+                </div>
+                <div class="text-[11px] text-slate-400">Máxima certificación técnica legal</div>
+              </div>
+            </div>
+
+            <!-- Barra de contacto directo -->
+            <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
+              <div class="text-slate-300">
+                <span class="text-slate-400">Atención Directa:</span><br />
+              </div>
+              <a href="https://wa.me/569681415257?text=Hola%20Elizabeth,%20necesito%20asesor%C3%ADa%20t%C3%A9cnica." target="_blank" class="px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold inline-flex items-center gap-1.5 transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN EXPERIENCIA & PROPÓSITO (ESTILO VIR INGENIERÍA)                   -->
+  <!-- ========================================================================= -->
+  <section id="experiencia" class="py-24 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Columna izquierda: texto de presentación -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+            <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+            <span>Experiencia y Compromiso RT POWER</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            Ingeniería eléctrica chilena con <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">rigurosidad técnica</span>
+          </h2>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+            <strong>RT POWER</strong> es una empresa chilena dedicada a ingeniería, servicios y productos eléctricos para el <strong>sector energético, industrias y profesionales de la electricidad</strong>.
+          </p>
+
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            Con un equipo multidisciplinario de ingenieros eléctricos (certificación SEC Clase A), ingenieros en automatización e ingenieros en software, entregamos soluciones integrales en <strong>generación, transmisión y distribución de energía</strong>, asegurando continuidad operacional, seguridad de las personas y cumplimiento regulatorio.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800">
+              <div class="text-2xl font-black text-amber-400 font-mono">100%</div>
+              <div class="text-xs text-slate-300 font-semibold mt-1">Conformidad Normativa CEN</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800">
+              <div class="text-2xl font-black text-sky-400 font-mono">SEC A</div>
+              <div class="text-xs text-slate-300 font-semibold mt-1">Ingenieros Certificados</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha: galería de fotografías -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Inspección y pruebas técnicas" class="w-full h-56 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-4">
+              <div class="text-xs font-bold text-amber-400 font-mono">MONTAJE & INSPECCIÓN</div>
+              <div class="text-xs text-white font-semibold">Pruebas en terreno y diagnóstico</div>
+            </div>
+          </div>
+
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Tableros de fuerza y control" class="w-full h-56 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-4">
+              <div class="text-xs font-bold text-amber-400 font-mono">TABLEROS DE FUERZA</div>
+              <div class="text-xs text-white font-semibold">Integración y control bajo norma</div>
+            </div>
+          </div>
+
+          <div class="sm:col-span-2 contenedor-tarjeta-imagen border border-slate-800 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1200&q=80" alt="Subestaciones y centrales eléctricas" class="w-full h-48 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-4">
+              <div class="text-xs font-bold text-amber-400 font-mono">GENERACIÓN & TRANSMISIÓN</div>
+              <div class="text-xs text-white font-semibold">Soluciones PMGD, Netbilling y subestaciones eléctricas</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SOLUCIONES ELÉCTRICAS & SECTOR ENERGÉTICO           -->
+  <!-- ========================================================================= -->
+  <section id="soluciones-electricas" class="py-24 bg-marca-azul-oscuro-950 relative overflow-hidden border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Título de la sección -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+          <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+          <span>Nustra especialidad</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+          Soluciones Eléctricas & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Sector Energético</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          Las exigencias aplicadas a las grandes centrales están alcanzando progresivamente a la <strong>generación de menor escala</strong>. En RT POWER desarrollamos soluciones para proyectos <strong>PMGD y Netbilling</strong>, alineadas con los requerimientos técnicos y normativos del <strong>Coordinador Eléctrico Nacional (CEN)</strong>.
+        </p>
+      </div>
+
+      <!-- Cuatro pilares del sector energético -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+        
+        <!-- Pilar A -->
+        <div class="tarjeta-resplandor-oscura bg-slate-900/90 rounded-2xl p-6 border border-slate-800 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-lg mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+              A
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Soluciones para PMGD y Netbilling</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Ingeniería de detalle, integración de protecciones, diseño unilineal y puesta en servicio para centrales de generación distribuida y autoconsumo.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-amber-400">
+            NTCO PMGD · Declaración SEC
+          </div>
+        </div>
+
+        <!-- Pilar B -->
+        <div class="tarjeta-resplandor-oscura bg-slate-900/90 rounded-2xl p-6 border border-slate-800 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono font-bold text-lg mb-4 group-hover:bg-sky-400 group-hover:text-slate-950 transition-all">
+              B
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Comunicaciones y Automatización</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Integración de RTUs, gateways de comunicación, redes de fibra óptica y protocolos industriales para transmisión continua sin interrupciones.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-sky-400">
+            DNP3 · IEC 61850 · Fibra & 4G
+          </div>
+        </div>
+
+        <!-- Pilar C -->
+        <div class="tarjeta-resplandor-oscura bg-slate-900/90 rounded-2xl p-6 border border-slate-800 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-lg mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+              C
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Levantamiento y Asesoría Técnica</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Evaluación técnica en terreno de instalaciones existentes, diagnóstico de brechas normativas CEN y regularización de expedientes SEC.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-amber-400">
+            Diagnóstico In Situ · As-Built
+          </div>
+        </div>
+
+        <!-- Pilar D -->
+        <div class="tarjeta-resplandor-oscura bg-slate-900/90 rounded-2xl p-6 border border-slate-800 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono font-bold text-lg mb-4 group-hover:bg-sky-400 group-hover:text-slate-950 transition-all">
+              D
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Mantenimiento y Visitas Técnicas</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Planes de inspección periódica, pruebas funcionales a relés, verificación de sincronía horaria y soporte de contingencias 24/7.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-sky-400">
+            Termografía · Pruebas a Relés
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EXPLORADOR TÉCNICO INTERACTIVO CON FOTOGRAFÍAS -->
+      <div class="mt-16 bg-slate-900/80 rounded-3xl p-6 lg:p-10 border border-slate-800 shadow-2xl backdrop-blur-xl">
+        
+        <div class="flex items-center justify-between flex-wrap gap-4 border-b border-slate-800 pb-6 mb-8">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2.5">
+              <i data-lucide="cpu" class="w-6 h-6 text-amber-400"></i>
+              <span>Módulos de Cumplimiento & Protocolos Eléctricos</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">Explora en detalle el equipamiento y arquitectura de cada solución eléctrica.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span
+              class="inline-flex items-center gap-2.5 text-xs font-mono text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-lg border border-amber-500/30 font-bold"
+            >
+              <!-- Punto amarillo parpadeante -->
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75 animate-ping"></span>
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+              </span>
+
+              <!-- Texto dinámico -->
+              <span id="insignia-pestana-tecnica">
+                NORMATIVA CEN & SEC
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Navegación mediante pestañas -->
+        <div class="flex flex-nowrap gap-2 pb-6 overflow-x-auto">
+          <button data-pestana="pmgd" class="boton-pestana-tecnica activa px-4 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center gap-2">
+            <i data-lucide="sun" class="w-4 h-4"></i>
+            <span>01 · PMGD & Netbilling</span>
+          </button>
+
+          <button data-pestana="sitr" class="boton-pestana-tecnica px-4 py-2.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 font-medium text-xs sm:text-sm border border-slate-800 transition-all flex items-center gap-2">
+            <i data-lucide="activity" class="w-4 h-4 text-sky-400"></i>
+            <span>02 · SITR (Tiempo Real)</span>
+          </button>
+
+          <button data-pestana="pmu" class="boton-pestana-tecnica px-4 py-2.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 font-medium text-xs sm:text-sm border border-slate-800 transition-all flex items-center gap-2">
+            <i data-lucide="gauge" class="w-4 h-4 text-amber-400"></i>
+            <span>03 · PMU (Medición Fasorial)</span>
+          </button>
+
+          <button data-pestana="slrp" class="boton-pestana-tecnica px-4 py-2.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 font-medium text-xs sm:text-sm border border-slate-800 transition-all flex items-center gap-2">
+            <i data-lucide="file-text" class="w-4 h-4 text-sky-400"></i>
+            <span>04 · SLRP (Oscilografías)</span>
+          </button>
+
+          <button data-pestana="gps" class="boton-pestana-tecnica px-4 py-2.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 font-medium text-xs sm:text-sm border border-slate-800 transition-all flex items-center gap-2">
+            <i data-lucide="clock" class="w-4 h-4 text-amber-400"></i>
+            <span>05 · Sincronización GPS</span>
+          </button>
+
+          <button data-pestana="scada" class="boton-pestana-tecnica px-4 py-2.5 rounded-xl bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800 font-medium text-xs sm:text-sm border border-slate-800 transition-all flex items-center gap-2">
+            <i data-lucide="layout-dashboard" class="w-4 h-4 text-sky-400"></i>
+            <span>06 · Monitoreo & SCADA</span>
+          </button>
+        </div>
+
+        <!-- Contenedor dinámico de la pestaña activa -->
+        <div id="contenido-pestana-tecnica" class="min-h-[380px]">
+          <!-- Este contenido se genera dinámicamente desde main.js -->
+        </div>
+
+      </div>
+
+      <!-- Cuadrícula de seis servicios principales -->
+      <div class="mt-16">
+        <h3 class="text-xl sm:text-2xl font-bold text-white text-center mb-8">
+          Servicios Especializados para el Sector Eléctrico
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- 01 Sincronización Horaria -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Sincronización horaria GPS" class="w-full h-64 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
+              <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">01</span>
+              <h4 class="text-lg font-bold text-white mb-1">Sincronización Horaria</h4>
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Sincronización horaria de alta precisión mediante GPS y protocolos PTP, IRIG-B y NTP para subestaciones.
+              </p>
+            </div>
+          </div>
+
+          <!-- 02 PMU -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80" alt="Medición fasorial PMU" class="w-full h-64 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
+              <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">02</span>
+              <h4 class="text-lg font-bold text-white mb-1">PMU (Phasor Measurement Unit)</h4>
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Monitoreo sincronizado de variables fasoriales en tiempo real para análisis de estabilidad del SEN.
+              </p>
+            </div>
+          </div>
+
+          <!-- 03 SITR -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="SITR tiempo real CEN" class="w-full h-64 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
+              <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">03</span>
+              <h4 class="text-lg font-bold text-white mb-1">SITR (Tiempo Real CEN)</h4>
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Integración y transmisión continua de datos al CEN mediante protocolos homologados (DNP3, ICCP, 104).
+              </p>
+            </div>
+          </div>
+
+          <!-- 04 SLRP -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="SLRP oscilografías" class="w-full h-64 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
+              <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">04</span>
+              <h4 class="text-lg font-bold text-white mb-1">SLRP (Oscilografías y Registros)</h4>
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Acceso remoto y descarga automatizada de eventos y registros COMTRADE para auditorías del CEN.
+              </p>
+            </div>
+          </div>
+
+          <!-- 05 Monitoreo y Control -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Monitoreo y control remoto" class="w-full h-64 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
+              <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">05</span>
+              <h4 class="text-lg font-bold text-white mb-1">Monitoreo y Control Remoto</h4>
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Supervisión y operación remota de interruptores y procesos eléctricos con plataformas SCADA.
+              </p>
+            </div>
+          </div>
+
+          <!-- 06 Informes y Reportes -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Informes y reportes operacionales" class="w-full h-64 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-6">
+              <span class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-2">06</span>
+              <h4 class="text-lg font-bold text-white mb-1">Informes y Reportes CEN</h4>
+              <p class="text-slate-300 text-xs leading-relaxed">
+                Generación automatizada de reportes operacionales y balances exigidos por la autoridad eléctrica.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BANNER CON IMAGEN FIJA AL DESPLAZARSE -->
+  <section class="py-24 fondo-banner-foto text-center relative border-y border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-mono font-bold uppercase">
+        ⚡ Soporte Integral en Terreno y Remoto
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        Contamos con especialistas preparados para evaluar, implementar y dar cumplimiento a las nuevas exigencias del CEN.
+      </h2>
+      <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Evita sanciones y retrasos en la conexión de tu central. Agendamos levantamientos técnicos inmediatos en todo Chile.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="#contacto" class="px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm transition-all shadow-xl shadow-amber-500/30 flex items-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Solicitar Evaluación Técnica</span>
+        </a>
+        <a href="https://wa.me/569681415257?text=Hola%20Daniel,%20necesito%20evaluar%20un%20proyecto%20el%C3%A9ctrico%20en%20terreno." target="_blank" class="px-8 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-white font-bold text-sm border border-slate-700 transition-all flex items-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>Hablar con el Área Técnica</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 2: CONTROL, AUTOMATIZACIÓN Y SOLUCIONES INDUSTRIALES              -->
+  <!-- ========================================================================= -->
+  <section id="soluciones-industriales" class="py-24 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono font-bold uppercase tracking-wider">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>Control y Automatización</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            Soluciones Industriales <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">Robustas & Eficientes</span>
+          </h2>
+
+          <p class="text-slate-300 text-base leading-relaxed">
+            En RT POWER desarrollamos soluciones de control, monitoreo y automatización adaptadas a las necesidades de los sectores <strong>industrial, agrícola y productivo</strong>.
+          </p>
+
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Abordamos desde mejoras específicas en equipos y procesos hasta la implementación de <strong>sistemas integrales llave en mano</strong>, acompañando a cada empresa según su infraestructura y nivel de desarrollo tecnológico.
+          </p>
+
+          <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 space-y-2">
+            <div class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Continuidad Operacional</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Transformamos procesos industriales con tecnología de vanguardia y soluciones confiables para evitar detenciones no programadas.
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <a href="#cotizador" onclick="selectCotizadorService('scada')" class="px-7 py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-extrabold text-sm transition-all inline-flex items-center gap-2">
+              <span>Cotizar Automatización Industrial</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjetas de soluciones industriales con fotografías -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+          
+          <!-- A: Tableros -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Tableros de fuerza y control" class="w-full h-56 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-5">
+              <span class="w-7 h-7 rounded-lg bg-sky-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-1">A</span>
+              <h3 class="text-base font-bold text-white mb-1">Tableros de Fuerza y Control</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Diseño y armado de TTA, CCM, fuerza motriz y distribución bajo norma NCh.
+              </p>
+            </div>
+          </div>
+
+          <!-- B: Instrumentación -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Instrumentación y procesos" class="w-full h-56 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-5">
+              <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-1">B</span>
+              <h3 class="text-base font-bold text-white mb-1">Instrumentación y Procesos</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Sensores de nivel, presión, flujo, temperatura y lazos de control continuos.
+              </p>
+            </div>
+          </div>
+
+          <!-- C: HMI y SCADA -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="HMI y SCADA industrial" class="w-full h-56 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-5">
+              <span class="w-7 h-7 rounded-lg bg-sky-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-1">C</span>
+              <h3 class="text-base font-bold text-white mb-1">HMI y Sistemas SCADA</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Pantallas táctiles intuitivas, registro histórico de variables y alarmas críticas.
+              </p>
+            </div>
+          </div>
+
+          <!-- D: Motores y Bombas -->
+          <div class="contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Salas de bombas y motores" class="w-full h-56 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-5">
+              <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs mb-1">D</span>
+              <h3 class="text-base font-bold text-white mb-1">Motores y Salas de Bombas</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Control con variadores de frecuencia (VFD), partidores suaves y alternancia.
+              </p>
+            </div>
+          </div>
+
+          <!-- E: Mantenimiento Especializado -->
+          <div class="sm:col-span-2 contenedor-tarjeta-imagen border border-slate-800 shadow-xl group">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80" alt="Mantenimiento y termografía" class="w-full h-48 object-cover" />
+            <div class="capa-tarjeta-imagen absolute inset-0 flex flex-col justify-end p-5">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-mono font-bold flex items-center justify-center text-xs">E</span>
+                <h3 class="text-base font-bold text-white">Mantenimiento Predictivo, Preventivo y Termografía</h3>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Inspección termográfica infrarroja, análisis de aislamiento con megóhmetro, ingeniería inversa y modernización de equipos obsoletos.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 3: FERRETERÍA Y SUMINISTRO ESPECIALIZADO                          -->
+  <!-- ========================================================================= -->
+  <section id="suministros" class="py-24 bg-marca-azul-oscuro-950 border-t border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+          <i data-lucide="package" class="w-3.5 h-3.5"></i>
+          <span>Ferretería & Suministro Especializado</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+          Productos con <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Respaldo Técnico</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          <strong>No pierdas tiempo en buscar lo que necesitas para tu empresa.</strong> En RT POWER gestionamos suministros, repuestos críticos, equipos especializados y herramientas certificadas para equipar a tus cuadrillas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+        
+        <!-- Característica 1 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-amber-400 uppercase mb-1">01 · Escala Corporativa</div>
+            <h3 class="text-lg font-bold text-white mb-2">Venta por Volumen</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Precios competitivos y condiciones comerciales especiales para proyectos de gran envergadura y compras corporativas recurrentes.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-mono text-slate-400">Descuentos B2B por proyecto</div>
+        </div>
+
+        <!-- Característica 2 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+              <i data-lucide="wrench" class="w-6 h-6"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-sky-400 uppercase mb-1">02 · Equipamiento de Terreno</div>
+            <h3 class="text-lg font-bold text-white mb-2">Herramientas y Componentes</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Herramientas dieléctricas certificadas, instrumentos de medición y equipos de protección personal (EPP) para faenas eléctricas.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-mono text-slate-400">Norma IEC / ASTM</div>
+        </div>
+
+        <!-- Característica 3 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-amber-400 uppercase mb-1">03 · Calidad Certificada</div>
+            <h3 class="text-lg font-bold text-white mb-2">Componentes Certificados</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Disyuntores, contactores, relés, transformadores y conductores de marcas homologadas con sello y certificación SEC.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-mono text-slate-400">Certificación SEC Vigente</div>
+        </div>
+
+        <!-- Característica 4 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+              <i data-lucide="headphones" class="w-6 h-6"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-sky-400 uppercase mb-1">04 · Asesoría Experta</div>
+            <h3 class="text-lg font-bold text-white mb-2">Soporte Técnico Especializado</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Nuestros ingenieros analizan la ficha técnica y te orientan en la selección exacta del componente adecuado para tu instalación.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-mono text-slate-400">Asesoría de Ingeniero</div>
+        </div>
+
+        <!-- Característica 5 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-amber-400 uppercase mb-1">05 · Continuidad Operativa</div>
+            <h3 class="text-lg font-bold text-white mb-2">Análisis de Repuestos Críticos</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Evaluamos tu planta en terreno, identificamos los componentes cuya falla detiene la faena y mantenemos stock disponible de respaldo.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-mono text-slate-400">Stock Crítico Garantizado</div>
+        </div>
+
+        <!-- Característica 6 -->
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+              <i data-lucide="globe" class="w-6 h-6"></i>
+            </div>
+            <div class="text-xs font-mono font-bold text-sky-400 uppercase mb-1">06 · Logística y Comercio</div>
+            <h3 class="text-lg font-bold text-white mb-2">Contratos e Importación</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Contratos de abastecimiento programado e importación directa de equipos de control y repuestos específicos sin intermediarios.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs font-mono text-slate-400">Importación Directa</div>
+        </div>
+
+      </div>
+
+      <!-- Llamado rápido para solicitar suministros -->
+      <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-1 text-center md:text-left">
+          <h4 class="text-lg sm:text-xl font-bold text-white">¿Tienes una lista de materiales o repuestos para cotizar?</h4>
+          <p class="text-xs sm:text-sm text-slate-300">Nuestra área comercial procesa tus requerimientos y solicitudes de compra de inmediato.</p>
+        </div>
+        <div>
+          <a href="https://wa.me/56942584408?text=Hola%20Elisabet,%20tengo%20una%20lista%20de%20suministros%20para%20cotizar." target="_blank" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+            <span>Cotizar Suministros con Elisabet Tobar</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 4: NUESTRAS VENTAJAS (POR QUÉ ELEGIR RT POWER)                    -->
+  <!-- ========================================================================= -->
+  <section id="ventajas" class="py-24 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span>Diferenciadores Clave</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            Un solo equipo para <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">diferentes necesidades</span>
+          </h2>
+
+          <p class="text-slate-300 text-base leading-relaxed">
+            <strong class="text-white">Ingeniería que conecta. Soluciones que impulsan.</strong> En RT POWER combinamos la rigurosidad técnica de los estándares eléctricos chilenos con la agilidad y cercanía que tu empresa necesita.
+          </p>
+
+          <div class="p-5 rounded-2xl bg-slate-950 border border-amber-500/30 space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+                <i data-lucide="shield" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-sm font-bold text-white">Certificación SEC Clase A</div>
+                <div class="text-xs text-slate-400">Máxima categoría regulatoria para proyectos de alta complejidad</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="#contacto" class="px-7 py-3.5 rounded-xl bg-marca-dorado-500 hover:bg-marca-dorado-400 text-slate-950 font-black text-sm transition-all inline-flex items-center gap-2 shadow-lg shadow-amber-500/25">
+              <span>Conversemos sobre tu próximo proyecto</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cuadrícula de ventajas -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Evaluación técnica en terreno</div>
+              <div class="text-xs text-slate-400 mt-0.5">Inspección física y diagnóstico in situ de tus activos.</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Diseño e integración a medida</div>
+              <div class="text-xs text-slate-400 mt-0.5">Soluciones adaptadas a tu infraestructura real.</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Puesta en servicio y soporte</div>
+              <div class="text-xs text-slate-400 mt-0.5">Acompañamiento técnico hasta la operación definitiva.</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Ingenieros Multidisciplinarios</div>
+              <div class="text-xs text-slate-400 mt-0.5">Eléctricos SEC A, Automatización y Software.</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Documentación e Ingeniería Final</div>
+              <div class="text-xs text-slate-400 mt-0.5">Planos as-built, memorias y protocolos completos.</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Atención Técnica y Comercial Directa</div>
+              <div class="text-xs text-slate-400 mt-0.5">Contacto directo con los líderes de proyecto sin demoras.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 5: COTIZADOR INTERACTIVO DE PROYECTOS                             -->
+  <!-- ========================================================================= -->
+  <section id="cotizador" class="py-24 bg-marca-azul-oscuro-950 border-t border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+          <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+          <span>Asistente de Cotización Rápida</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+          Cotiza tu Proyecto en <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">1 Minuto</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          Selecciona el tipo de solución eléctrica o industrial que necesitas. Puedes enviar la solicitud directamente a WhatsApp o por correo formal.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Caja de campos del formulario -->
+        <div class="lg:col-span-7 bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl">
+          <form id="formulario-cotizacion-proyecto" class="space-y-6">
+            
+            <!-- Paso 1: selección del área de destino -->
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">1. ¿A qué área deseas dirigir tu consulta?</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-500 cursor-pointer flex items-center gap-3 transition-colors has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/10">
+                  <input type="radio" name="cotizacion-destino" value="tecnica" checked class="text-amber-500 focus:ring-amber-500 bg-slate-900 border-slate-700" />
+                  <div>
+                    <div class="text-sm font-bold text-white flex items-center gap-1.5">
+                      <i data-lucide="wrench" class="w-4 h-4 text-amber-400"></i> Área Técnica
+                    </div>
+                    <div class="text-xs text-slate-400">Daniel Retamal · Normas CEN, PMGD, Terreno</div>
+                  </div>
+                </label>
+
+                <label class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-sky-500 cursor-pointer flex items-center gap-3 transition-colors has-[:checked]:border-sky-500 has-[:checked]:bg-sky-500/10">
+                  <input type="radio" name="cotizacion-destino" value="comercial" class="text-sky-500 focus:ring-sky-500 bg-slate-900 border-slate-700" />
+                  <div>
+                    <div class="text-sm font-bold text-white flex items-center gap-1.5">
+                      <i data-lucide="briefcase" class="w-4 h-4 text-sky-400"></i> Área Comercial
+                    </div>
+                    <div class="text-xs text-slate-400">Elisabet Tobar · Precios, Suministros, Ventas</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Paso 2: selección del servicio -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="cotizacion-servicio" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">2. Solución Requerida *</label>
+                <select id="cotizacion-servicio" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none">
+                  <option value="PMGD y Netbilling (Normativa CEN)">PMGD y Netbilling (Normativa CEN)</option>
+                  <option value="SITR - Transmisión en Tiempo Real CEN">SITR - Transmisión en Tiempo Real CEN</option>
+                  <option value="PMU - Unidades de Medición Fasorial">PMU - Unidades de Medición Fasorial</option>
+                  <option value="SLRP - Oscilografías y Registros CEN">SLRP - Oscilografías y Registros CEN</option>
+                  <option value="Sincronización Horaria GPS / PTP">Sincronización Horaria GPS / PTP</option>
+                  <option value="Tableros de Fuerza y Control">Tableros de Fuerza y Control</option>
+                  <option value="Automatización de Procesos e Instrumentación">Automatización e Instrumentación</option>
+                  <option value="Mantenimiento Correctivo / Preventivo / Termografía">Mantenimiento y Diagnóstico</option>
+                  <option value="Suministro de Repuestos Críticos y Ferretería">Suministro de Repuestos Críticos</option>
+                  <option value="Otro Requerimiento de Ingeniería">Otro Requerimiento de Ingeniería</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="cotizacion-urgencia" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Plazo / Urgencia</label>
+                <select id="cotizacion-urgencia" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none">
+                  <option value="Urgente / Contingencia inmediata">Urgente / Contingencia Inmediata</option>
+                  <option value="En desarrollo (1 a 4 semanas)" selected>En desarrollo (1 a 4 semanas)</option>
+                  <option value="Planificación a mediano plazo">Planificación a mediano plazo</option>
+                  <option value="Cotización referencial / Licitación">Cotización referencial / Licitación</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Paso 3: información del cliente -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="cotizacion-nombre" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Tu Nombre *</label>
+                <input type="text" id="cotizacion-nombre" placeholder="Ej: Roberto Valenzuela" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="cotizacion-empresa" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Empresa / Proyecto</label>
+                <input type="text" id="cotizacion-empresa" placeholder="Ej: Planta Solar Los Andes" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="cotizacion-telefono" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Teléfono / WhatsApp *</label>
+                <input type="tel" id="cotizacion-telefono" placeholder="Ej: +56 9 1234 5678" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="cotizacion-correo" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Correo Electrónico *</label>
+                <input type="email" id="cotizacion-correo" placeholder="Ej: r.valenzuela@empresa.cl" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+              </div>
+            </div>
+
+            <div>
+              <label for="cotizacion-region" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Región / Ubicación en Chile</label>
+              <input type="text" id="cotizacion-region" placeholder="Ej: Región de Antofagasta / Región Metropolitana" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+            </div>
+
+            <div>
+              <label for="cotizacion-detalles" class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Breve descripción del requerimiento</label>
+              <textarea id="cotizacion-detalles" rows="3" placeholder="Detalles de potencia, equipos existentes, plazos normativos, etc." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none resize-none"></textarea>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Vista previa y acciones de envío -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="bg-slate-950 rounded-3xl p-6 sm:p-7 border border-slate-800 shadow-2xl">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+              <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Vista Previa del Mensaje</span>
+              <span class="text-[10px] text-slate-500">Auto-generado</span>
+            </div>
+
+            <div class="mt-4 p-4 rounded-2xl bg-slate-900 text-xs font-mono text-slate-300 leading-relaxed overflow-x-auto whitespace-pre-wrap border border-slate-800/80 max-h-60" id="resumen-cotizacion">
+              <!-- Vista previa generada mediante JavaScript -->
+            </div>
+
+            <div class="mt-6 space-y-3">
+              <button id="enviar-cotizacion-whatsapp" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2">
+                <i data-lucide="message-square" class="w-5 h-5"></i>
+                <span>Enviar Cotización por WhatsApp</span>
+              </button>
+
+              <button id="enviar-cotizacion-correo" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm border border-slate-700 transition-all flex items-center justify-center gap-2">
+                <i data-lucide="mail" class="w-5 h-5 text-amber-400"></i>
+                <span>Enviar por Correo Formal</span>
+              </button>
+            </div>
+
+            <div class="mt-4 text-center">
+              <p class="text-[11px] text-slate-500">
+                🔒 Tus datos serán tratados con estricta confidencialidad por el equipo de RT POWER.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SECCIÓN 6: CONTACTO DIRECTO & EQUIPO                                      -->
+  <!-- ========================================================================= -->
+  <section id="contacto" class="py-24 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+          <span>Canales Oficiales</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+          Conversemos Sobre tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Próximo Proyecto</span>
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          Atención técnica y comercial directa. Solicita una evaluación técnica, agenda una visita en terreno o envíanos tu requerimiento.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- TARJETA DEL ÁREA TÉCNICA (Daniel Retamal) -->
+        <div class="p-8 rounded-3xl bg-slate-950 border border-amber-500/30 shadow-2xl relative group hover:border-amber-500 transition-all flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 font-bold">
+              <i data-lucide="wrench" class="w-7 h-7"></i>
+            </div>
+            
+            <div>
+              <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Liderazgo Técnico</span>
+              <h3 class="text-xl font-extrabold text-white mt-1">Área Técnica</h3>
+              <p class="text-sm font-semibold text-slate-300">Daniel Retamal</p>
+              <p class="text-xs text-slate-400 mt-1">Soluciones eléctricas, cumplimiento CEN, especificaciones de ingeniería y visitas a terreno.</p>
+            </div>
+
+            <div class="pt-2 space-y-2 text-sm">
+              <a href="mailto:daniel.retamal@rtpower.cl" class="flex items-center gap-2.5 text-slate-300 hover:text-amber-400 transition-colors">
+                <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+                <span>daniel.retamal@rtpower.cl</span>
+              </a>
+              <a href="tel:+569681415257" class="flex items-center gap-2.5 text-slate-300 hover:text-amber-400 transition-colors">
+                <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+                <span>+56 9 6814 15257</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <a href="https://wa.me/569681415257?text=Hola%20Daniel,%20te%20contacto%20desde%20la%20web%20rtpower.cl%20para%20una%20consulta%20t%C3%A9cnica." target="_blank" class="w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm flex items-center justify-center gap-2 transition-all">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Contactar a Daniel por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- TARJETA DEL ÁREA COMERCIAL (Elisabet Tobar) -->
+        <div class="p-8 rounded-3xl bg-slate-950 border border-sky-500/30 shadow-2xl relative group hover:border-sky-500 transition-all flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 font-bold">
+              <i data-lucide="briefcase" class="w-7 h-7"></i>
+            </div>
+            
+            <div>
+              <span class="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">Gestión Comercial</span>
+              <h3 class="text-xl font-extrabold text-white mt-1">Área Comercial</h3>
+              <p class="text-sm font-semibold text-slate-300">Elisabet Tobar</p>
+              <p class="text-xs text-slate-400 mt-1">Cotizaciones formales, contratos de abastecimiento, órdenes de compra y facturación.</p>
+            </div>
+
+            <div class="pt-2 space-y-2 text-sm">
+              <a href="mailto:elisabet.tobar@rtpower.cl" class="flex items-center gap-2.5 text-slate-300 hover:text-sky-400 transition-colors">
+                <i data-lucide="mail" class="w-4 h-4 text-sky-400"></i>
+                <span>elisabet.tobar@rtpower.cl</span>
+              </a>
+              <a href="tel:+56942584408" class="flex items-center gap-2.5 text-slate-300 hover:text-sky-400 transition-colors">
+                <i data-lucide="phone" class="w-4 h-4 text-sky-400"></i>
+                <span>+56 9 4258 4408</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <a href="https://wa.me/56942584408?text=Hola%20Elisabet,%20te%20contacto%20desde%20la%20web%20rtpower.cl%20para%20una%20cotizaci%C3%B3n%20comercial." target="_blank" class="w-full py-3.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-extrabold text-sm flex items-center justify-center gap-2 transition-all">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Contactar a Elisabet por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- FORMULARIO DIRECTO O INFO INSTITUCIONAL -->
+        <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 shadow-2xl flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-slate-800 text-slate-200 flex items-center justify-center mb-4 font-bold">
+              <i data-lucide="globe" class="w-7 h-7 text-amber-400"></i>
+            </div>
+
+            <div>
+              <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Cobertura Nacional</span>
+              <h3 class="text-xl font-extrabold text-white mt-1">RT POWER Chile</h3>
+              <p class="text-xs text-slate-400 mt-1">Servicios en terreno en todo Chile y soporte remoto continuo.</p>
+            </div>
+
+            <div class="pt-2 space-y-3 text-sm text-slate-300">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="map-pin" class="w-4 h-4 text-amber-400"></i>
+                <span>Operaciones en todo el territorio nacional</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="link" class="w-4 h-4 text-sky-400"></i>
+                <a href="https://www.rtpower.cl" class="text-sky-400 hover:underline">www.rtpower.cl</a>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="clock" class="w-4 h-4 text-amber-400"></i>
+                <span>Lunes a Viernes: 08:30 a 18:30 hrs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <a href="#cotizador" class="w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all border border-slate-700">
+              <i data-lucide="send" class="w-4 h-4 text-amber-400"></i>
+              <span>Abrir Cotizador Online</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulario de mensaje rápido -->
+      <div class="mt-14 max-w-4xl mx-auto bg-slate-950/90 rounded-3xl p-8 border border-slate-800 shadow-xl">
+        <h3 class="text-xl font-bold text-white mb-2 text-center">Envíanos un mensaje rápido</h3>
+        <p class="text-xs text-slate-400 text-center mb-6">Te responderemos a la brevedad con la asesoría requerida.</p>
+
+        <form id="formulario-contacto-principal" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <input type="text" placeholder="Nombre completo" required class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+            <input type="email" placeholder="Correo electrónico" required class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+            <input type="tel" placeholder="Teléfono" required class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none" />
+          </div>
+          <textarea rows="3" placeholder="¿En qué te podemos ayudar? (Ej: Evaluación técnica para central PMGD o mantenimiento de tableros)" required class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-sm focus:border-amber-500 focus:outline-none resize-none"></textarea>
+          
+          <div class="flex items-center justify-between flex-wrap gap-4 pt-2">
+            <div id="alerta-contacto" class="hidden text-xs text-emerald-400 font-medium flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-4 h-4"></i>
+              <span>¡Mensaje enviado con éxito! Nos comunicaremos contigo a la brevedad.</span>
+            </div>
+            <button type="submit" class="ml-auto px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition-all flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Enviar Mensaje</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PIE DE PÁGINA                                                                    -->
+  <!-- ========================================================================= -->
+  <footer class="bg-marca-azul-oscuro-950 border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Columna 1: información de la empresa -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-marca-dorado-500 flex items-center justify-center text-slate-950 font-black">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-2xl font-black text-white">RT<span class="text-marca-dorado-500">POWER</span></span>
+              <span class="block text-[10px] uppercase font-mono text-slate-400 font-bold">Ingeniería y Servicios</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Empresa chilena dedicada a ingeniería, servicios y productos eléctricos para el sector energético, industrias y profesionales de la electricidad.
+          </p>
+
+          <div class="flex items-center gap-2 text-xs font-mono text-amber-400">
+            <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 font-bold">SEC CLASE A</span>
+            <span class="px-2.5 py-1 rounded bg-sky-500/10 border border-sky-500/30 text-sky-300 font-bold">NORMATIVA CEN</span>
+          </div>
+        </div>
+
+        <!-- Columna 2: soluciones eléctricas -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Soluciones Eléctricas</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#soluciones-electricas" class="hover:text-amber-400 transition-colors">Proyectos PMGD & Netbilling</a></li>
+            <li><a href="#soluciones-electricas" class="hover:text-amber-400 transition-colors">Integración SITR (Tiempo Real)</a></li>
+            <li><a href="#soluciones-electricas" class="hover:text-amber-400 transition-colors">Medición Fasorial PMU</a></li>
+            <li><a href="#soluciones-electricas" class="hover:text-amber-400 transition-colors">Descarga SLRP & Oscilografías</a></li>
+            <li><a href="#soluciones-electricas" class="hover:text-amber-400 transition-colors">Sincronización Horaria GPS</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: soluciones industriales -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Automatización & Control</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#soluciones-industriales" class="hover:text-amber-400 transition-colors">Tableros de Fuerza y Control</a></li>
+            <li><a href="#soluciones-industriales" class="hover:text-amber-400 transition-colors">Instrumentación de Procesos</a></li>
+            <li><a href="#soluciones-industriales" class="hover:text-amber-400 transition-colors">Desarrollo HMI y SCADA</a></li>
+            <li><a href="#soluciones-industriales" class="hover:text-amber-400 transition-colors">Salas de Bombas y Motores</a></li>
+            <li><a href="#soluciones-industriales" class="hover:text-amber-400 transition-colors">Mantenimiento y Termografía</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: contacto rápido -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Contacto Directo</h4>
+          <ul class="space-y-2 text-xs">
+            <li>
+              <strong class="text-slate-200">Área Técnica:</strong><br />
+              <a href="tel:+569681415257" class="text-amber-400 hover:underline">+56 9 6814 15257</a><br />
+              <span class="text-slate-400">daniel.retamal@rtpower.cl</span>
+            </li>
+            <li class="pt-1">
+              <strong class="text-slate-200">Área Comercial:</strong><br />
+              <a href="tel:+56942584408" class="text-sky-400 hover:underline">+56 9 4258 4408</a><br />
+              <span class="text-slate-400">elisabet.tobar@rtpower.cl</span>
+            </li>
+            <li class="pt-1">
+              <a href="https://www.rtpower.cl" class="text-slate-300 hover:text-white font-mono">www.rtpower.cl</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Barra inferior -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          © 2026 RT POWER SpA. Todos los derechos reservados.
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#inicio" class="hover:text-amber-400 transition-colors">Volver arriba ↑</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP CON DOS DESTINATARIOS -->
+  <div class="fixed bottom-6 right-6 z-50">
+    
+    <!-- Ventana flotante de selección -->
+    <div id="selector-whatsapp" class="hidden mb-3 w-80 bg-slate-950 border border-slate-800 rounded-3xl p-4 shadow-2xl backdrop-blur-xl">
+      <div class="flex items-center justify-between pb-2.5 border-b border-slate-800 mb-3">
+        <span class="text-xs font-bold text-white flex items-center gap-1.5">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>Atención Directa WhatsApp</span>
+        </span>
+        <button id="cerrar-selector-whatsapp" class="text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="space-y-2">
+        <a href="https://wa.me/569681415257?text=Hola%20Daniel,%20necesito%20asesor%C3%ADa%20t%C3%A9cnica%20sobre%20soluciones%20el%C3%A9ctricas." target="_blank" class="p-3 rounded-2xl bg-slate-900 hover:bg-slate-850 hover:border-amber-500/50 border border-slate-800 block transition-all">
+          <div class="text-xs font-bold text-amber-400 flex items-center gap-1.5">
+            <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
+            <span>Área Técnica (Daniel Retamal)</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Consultas técnicas, normativas CEN y visitas a terreno</div>
+        </a>
+
+        <a href="https://wa.me/56942584408?text=Hola%20Elisabet,%20necesito%20una%20cotizaci%C3%B3n%20comercial%20de%20RT%20POWER." target="_blank" class="p-3 rounded-2xl bg-slate-900 hover:bg-slate-850 hover:border-sky-500/50 border border-slate-800 block transition-all">
+          <div class="text-xs font-bold text-sky-400 flex items-center gap-1.5">
+            <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+            <span>Área Comercial (Elisabet Tobar)</span>
+          </div>
+          <div class="text-[11px] text-slate-400 mt-0.5">Cotizaciones, listas de suministros y compras</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Botón principal -->
+    <button id="boton-whatsapp-flotante" class="w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center shadow-2xl shadow-emerald-500/40 transform hover:scale-105 transition-all" aria-label="Abrir WhatsApp">
+      <svg class="w-7 h-7 fill-slate-950" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Activa los íconos de Lucide -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Archivo principal de JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
