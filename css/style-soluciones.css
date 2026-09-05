@@ -526,3 +526,52 @@ footer > div > .grid > div:last-child ul > li:nth-child(2) {
   min-height: 2.5rem !important;
   box-sizing: border-box;
 }
+
+/* Selector flotante de WhatsApp simplificado a una sola opción. */
+#selector-whatsapp > div:first-child > span > span {
+  font-size: 0 !important;
+}
+
+#selector-whatsapp > div:first-child > span > span::after {
+  content: "WhatsApp RT POWER";
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+#selector-whatsapp > .space-y-2 > a:nth-child(2) {
+  display: none !important;
+}
+
+#selector-whatsapp > .space-y-2 > a:first-child {
+  padding: 1rem !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  background: rgba(15, 23, 42, 0.95) !important;
+}
+
+#selector-whatsapp > .space-y-2 > a:first-child:hover {
+  border-color: rgba(52, 211, 153, 0.75) !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+#selector-whatsapp > .space-y-2 > a:first-child > * {
+  display: none !important;
+}
+
+#selector-whatsapp > .space-y-2 > a:first-child::before {
+  content: "¡Contáctate con nosotros!";
+  display: block;
+  color: #34d399;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+#selector-whatsapp > .space-y-2 > a:first-child::after {
+  content: "Cuéntanos qué necesitas y nuestro equipo te responderá a la brevedad.";
+  display: block;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+  font-weight: 400;
+}
