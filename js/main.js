@@ -489,7 +489,7 @@ function iniciarPestanasTecnicas() {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start animar-aparicion">
 
         <!-- Columna izquierda: descripción y características -->
-        <div class="lg:col-span-7 space-y-6">
+        <div class="lg:col-span-7 space-y-6 lg:translate-y-4">
           <div>
 
             <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight">
