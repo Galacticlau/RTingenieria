@@ -391,20 +391,33 @@ a[href="#ventajas"] {
   }
 }
 
-/* Alineación exacta de las secciones al navegar desde el menú superior.
-   En escritorio cada sección comienza en el borde superior del viewport y,
-   si su contenido es corto, ocupa como mínimo una pantalla completa. */
+/* Navegación desde el menú superior con barra fija.
+   La barra se reduce a unos 4.25rem al hacer scroll, por lo que las secciones
+   comienzan justo debajo de ella, sin quedar tapadas ni mostrar una franja
+   de la sección anterior. Las secciones cortas ocupan el alto visible restante. */
 @media (min-width: 1024px) {
-  section[id] {
-    scroll-margin-top: 0 !important;
-  }
-
   #experiencia,
   #soluciones-electricas,
   #soluciones-industriales,
   #suministros,
   #cotizador,
   #contacto {
-    min-height: 100vh !important;
+    scroll-margin-top: 4.25rem !important;
+  }
+
+  #experiencia {
+    height: calc(100vh - 4.25rem) !important;
+    min-height: calc(100vh - 4.25rem) !important;
+  }
+
+  #suministros,
+  #cotizador {
+    min-height: calc(100vh - 4.25rem) !important;
+  }
+
+  #soluciones-electricas,
+  #soluciones-industriales,
+  #contacto {
+    min-height: auto !important;
   }
 }
