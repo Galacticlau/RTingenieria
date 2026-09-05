@@ -81,6 +81,13 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
+/* Posición uniforme del contenido en las cuatro tarjetas de la cuadrícula. */
+.tarjeta-industrial-regular .capa-tarjeta-imagen {
+  justify-content: flex-start;
+  padding-top: 4.25rem;
+}
+
+
 .tarjeta-industrial .resumen-tarjeta-industrial {
   opacity: 1;
   max-height: 5rem;
