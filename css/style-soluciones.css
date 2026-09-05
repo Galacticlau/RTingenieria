@@ -351,6 +351,7 @@ a[href="#ventajas"] {
 
   #cotizador > div > .grid {
     gap: 1.5rem !important;
+    align-items: stretch !important;
   }
 
   #formulario-cotizacion-proyecto {
@@ -371,5 +372,21 @@ a[href="#ventajas"] {
 
   #cotizador #resumen-cotizacion + div {
     margin-top: 1rem !important;
+  }
+
+  /* Igualamos visualmente las dos ventanas principales del cotizador. */
+  #cotizador > div > .grid > div:nth-child(2) {
+    height: 100%;
+  }
+
+  #cotizador > div > .grid > div:nth-child(2) > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #cotizador > div > .grid > div:nth-child(2) > div > .mt-4.text-center {
+    margin-top: auto !important;
+    padding-top: 1rem;
   }
 }
